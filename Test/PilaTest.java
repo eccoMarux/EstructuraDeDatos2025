@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import estaticas.Pila;
+
 import static org.junit.Assert.*;
 
 import java.util.regex.Matcher;
