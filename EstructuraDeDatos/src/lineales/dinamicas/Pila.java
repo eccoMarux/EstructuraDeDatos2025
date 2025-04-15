@@ -1,3 +1,4 @@
+package lineales.dinamicas;
 /**
  * TDA Pila (Implementación Dinámica)
  * Estructura LIFO (Last In First Out) basada en nodos enlazados.
@@ -23,7 +24,7 @@ public class Pila {
     // Desapilar: elimina el elemento del tope - O(1)
     public boolean desapilar() {
         boolean exito = false;
-        if (!this.esVacia()) {
+        if (this.tope != null) {
             this.tope = this.tope.getEnlace();  // Avanza al siguiente nodo
             exito = true;
         }
@@ -33,7 +34,7 @@ public class Pila {
     // ObtenerTope: devuelve el elemento en el tope - O(1)
     public Object obtenerTope() {
         Object elem = null;
-        if (!this.esVacia()) {
+        if (this.tope != null) {
             elem = this.tope.getElemento();
         }
         return elem;
@@ -52,7 +53,7 @@ public class Pila {
     // Clone: devuelve una copia exacta (profunda) - O(n)
     public Pila clone() {
         Pila clon = new Pila();
-        if (!this.esVacia()) {
+        if (this.tope != null) { 
             Nodo aux = this.tope;
             Pila pilaAux = new Pila();
             // Recorre la pila original y apila en pilaAux (inversión temporal)
@@ -69,22 +70,44 @@ public class Pila {
         return clon;
     }
 
+    /* El de Jonathan.
+    public Pila clon() {
+
+        Pila clon = new Pila();
+        Nodo aux1, aux2;
+        aux1 = this.tope;
+        clon.tope = new Nodo(aux1.getElemento(), null);
+        aux1 = aux1.getEnlace();
+        aux2 = clon.tope;
+
+        while (aux1 != null) {
+            aux2.setEnlace(new Nodo(aux1.getElemento(), null));
+            aux1 = aux1.getEnlace();
+            aux2 = aux2.getEnlace();
+        }
+
+        return clon;
+
+    }
+    */
+
     // toString: para depuración (muestra los elementos) - O(n)
     @Override
     public String toString() {
         String cadena = "";
-        if (this.esVacia()) {
-            cadena = "Pila vacía";
+        if (this.tope == null) {
+            cadena = "[]";
         } else {
             Nodo aux = this.tope;
             while (aux != null) {
                 cadena += aux.getElemento().toString();
                 if (aux.getEnlace() != null) {
-                    cadena += ", ";
+                    cadena += ",";
                 }
                 aux = aux.getEnlace();
             }
+            cadena="[" + cadena + "]";
         }
-        return "[" + cadena + "]";
+        return cadena;
     }
 }

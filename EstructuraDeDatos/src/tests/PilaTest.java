@@ -1,13 +1,13 @@
+package tests;
 import org.junit.Test;
-
-import estaticas.Pila;
 
 import static org.junit.Assert.*;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//import lineales.estaticas.*;
+import lineales.dinamicas.Pila;
+//import lineales.estaticas.Pila;
 
 /**
  *

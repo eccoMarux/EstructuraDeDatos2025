@@ -1,3 +1,4 @@
+package lineales.dinamicas;
 /**
  * Clase Nodo (para estructuras dinámicas)
  * Unidad básica de almacenamiento para estructuras enlazadas (listas, pilas, colas).

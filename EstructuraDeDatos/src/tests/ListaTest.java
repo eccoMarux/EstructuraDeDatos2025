@@ -1,3 +1,5 @@
+package tests;
+
 import java.util.regex.Pattern;
 
 import static org.junit.Assert.*;
@@ -7,7 +9,6 @@ import java.util.regex.Matcher;
 import org.junit.Test;
 
 import lineales.dinamicas.Lista;
-import lineales.estaticas.Cola;
 
 /**
  *

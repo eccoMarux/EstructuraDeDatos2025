@@ -1,3 +1,4 @@
+package tests;
 import static org.junit.Assert.*;
 
 import java.util.regex.Matcher;
@@ -5,8 +6,8 @@ import java.util.regex.Pattern;
 
 import org.junit.Test;
 
-import lineales.estaticas.Cola;
-
+import lineales.dinamicas.Cola;
+//import lineales.estaticas.Cola;
 /**
  *
  * @author Catedra EDAT - FAI - UNCOMA

@@ -1,3 +1,5 @@
+package lineales.estaticas;
+
 /**
  * TDA Pila (Implementación Estática)
  * Estructura LIFO (Last In First Out) que almacena elementos en un arreglo de tamaño fijo.
@@ -31,8 +33,8 @@ public class Pila {
     // Desapilar: elimina el elemento del tope - O(1)
     public boolean desapilar() {
         boolean exito = false;
-        if (!this.esVacia()) {  // Si la pila no está vacía
-            this.arreglo[tope] = null;  // Opcional (para liberar memoria)
+        if (this.tope != -1) {  // Si la pila no está vacía
+            this.arreglo[tope] = null;  // Opcional (para liberar memoria)?
             this.tope--;
             exito = true;
         }
@@ -42,10 +44,10 @@ public class Pila {
     // ObtenerTope: devuelve el elemento en el tope (sin sacarlo) - O(1)
     public Object obtenerTope() {
         Object elem = null;
-        if (!this.esVacia()) {
+        if (this.tope != -1) {
             elem = this.arreglo[tope];
         }
-        return elem;  // Precondición: !esVacia()
+        return elem;  
     }
 
     // Verifica si la pila está vacía
@@ -56,16 +58,16 @@ public class Pila {
     // Vaciar: elimina todos los elementos
     public void vaciar() {
         this.tope = -1;
-        // Opcional: this.arreglo = new Object[TAMANIO];
     }
 
     // Clone: devuelve una copia exacta de la pila - O(n)
     public Pila clone() {
         Pila clon = new Pila();
-        clon.tope = this.tope;
-        for (int i = 0; i <= this.tope; i++) {
-            clon.arreglo[i] = this.arreglo[i];
+        if(this.tope != -1){
+            clon.tope = this.tope;
+            clon.arreglo=this.arreglo.clone();
         }
+        
         return clon;
     }
 
@@ -74,16 +76,17 @@ public class Pila {
     public String toString() {
         String cadena = "";
         if (this.esVacia()) {
-            cadena = "Pila vacía";
+            cadena = "[]";
         } else {
-            for (int i = 0; i <= this.tope; i++) {
+            for (int i = this.tope; i >= 0; i--) {
                 cadena += this.arreglo[i].toString();
-                if (i < this.tope){
-                    cadena += ", ";
+                if (i > 0){
+                    cadena += ",";
                 }
             }
+            cadena= "[" + cadena + "]";
         }
-        return "[" + cadena + "]";
+        return cadena;
     }
 }
 
