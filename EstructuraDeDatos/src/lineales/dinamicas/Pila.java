@@ -1,3 +1,10 @@
+
+/************* Autores ***********
+Maria Elvira Monserrat Vidal, Legajo FAI-1829 
+Jonathan Maximiliano Cabrera, Legajo 108666
+Randal Pereda, Legajo FAI-2389
+*/
+
 package lineales.dinamicas;
 /**
  * TDA Pila (Implementación Dinámica)
