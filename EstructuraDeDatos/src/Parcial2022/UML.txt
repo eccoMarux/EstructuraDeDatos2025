@@ -1,0 +1,56 @@
+
+UML 
+TDA LISTA
+- cabecera: Nodo
+- longitud: int
+
++ Lista()
++ insertar(Object, int)::Boolean
++ eliminar(int)::Boolean
++ localizar(Object)::int
++ recuperar(int)::Object
++ longitud()::int
++ vaciar()::void
++ esVacia()::Boolean
++ clone()::Lista
++ toString()::String
+
+////////////////////////////////////////////////////////
+
+TDA NODO
+- elemento: Object
+- enlace: Nodo
+
++ Nodo()
++ getElemento():: Object
++ getEnlace():: Nodo
++ setEnlace(Nodo):: void
+
+////////////////////////////////////////////////////////
+
+TDA COLA
+- frente: Nodo
+- fin: Nodo
+
++ Cola()
++ obtenerFrente() :: Object
++ poner(Object) :: Boolean
++ sacar() :: Boolean
++ esVacia() :: Booleano
++ vaciar() :: void
++ toString() :: String
++ clone() :: Lista
+
+////////////////////////////////////////////////////////
+
+TDA Pila
+- tope: Nodo
+
++ Pila()
++ apila(Object) :: Boolean
++ desapila() :: Boolean
++ obterTope() :: Object
++ esVacia() :: Boolean
++ vaciar() :: void
++ toString() :: String
++ clone() :: Pila
